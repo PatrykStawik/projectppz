@@ -8,7 +8,6 @@ interface Props {
 }
 
 const StyledInput = styled.input<Props>`
-  // width: ${({ lenght }) => (lenght !== 'short' ? '400px' : '200px')};
   height: ${({ variant }) => (variant === 'big' ? '30px' : '50px')};
   width: ${props => props.$lenght}'px';
   border-radius: 10px;
@@ -40,7 +39,7 @@ const Input = React.forwardRef<HTMLInputElement, Props & JSX.IntrinsicElements['
       aria-required={required}
       disabled={disabled}
       placeholder={placeholder}
-      ref={forwardRef}
+      ref={forwardRef as any}
       value={value || defaultValue}
       name={name}
       onChange={onChange}

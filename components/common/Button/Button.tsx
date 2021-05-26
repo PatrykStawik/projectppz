@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 
@@ -18,9 +18,6 @@ export interface BaseButtonProps {
   variant?: 'primary' | 'secondary' | 'ternary';
 }
 
-type InheritedButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
-export type ButtonProps = BaseButtonProps & InheritedButtonProps;
-
 const StyledButton = styled.button`
   width: 100px;
   height: 50px;
@@ -28,10 +25,10 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
-export const Button: FC<ButtonProps> = React.memo(
+export const Button: FC<BaseButtonProps> = React.memo(
   ({ children, className, type = 'button', variant = 'primary', ...props }) => {
     return (
-      <StyledButton data-testid="button" type={type} {...props}>
+      <StyledButton data-testid="button" {...props}>
         {children}
       </StyledButton>
     );
