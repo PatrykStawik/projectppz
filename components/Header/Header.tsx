@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image'
 import { colors } from '../../styles/colors';
 import { centerText, setFlex } from '../../styles/functions';
 import { NextLink } from '../common/NextLink';
@@ -7,7 +8,7 @@ import { NextLink } from '../common/NextLink';
 const Wrapper = styled.header`
   .baner {
     height: 80px;
-    background-color: ${colors.red};
+    //background-color: ${colors.red};
   }
   .menu {
     ${setFlex('column')}
@@ -38,7 +39,8 @@ const data = [
 export const Header = () => {
   return (
     <Wrapper>
-      <div className="baner">DOJEBANY BANER</div>
+      <div className="baner">
+        <Image src="/baner.png" alt="baner"  height={80} width={180}/></div>
       <div className="menu">
         {data.map(({ title, href }) => (
           <NextLink href={href} key={title}>
