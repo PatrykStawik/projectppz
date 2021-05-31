@@ -36,12 +36,12 @@ export const IndexPage = () => {
       <div className="advertisement container">
         <Bar
           title="Jakies ogłoszenie losowe"
-          content="Sprzedam opla tanie cenak do ruchania ujebany błotnik pozbęde sie tej kurwy"
+          content="Sprzedam opla tanie cenak do sa 1234 błotnik pozbęde sie tej 1234"
           date="22.10.2021"
         />
         <Bar
           title="Jakies ogłoszenie losowe"
-          content="Sprzedam opla tanie cenak do ruci ujebany błotnik pozbęde sie tej kurwy"
+          content="Sprzedam opla tanie cenak do ruci 1234 błotnik pozbęde sie tej 1234"
           date="22.10.2021"
         />
         <Bar
@@ -69,11 +69,11 @@ export const IndexPage = () => {
         <div className="news container">
           <Bar
             title="Jakies news losowe"
-            content="Twoja stara została wyruchana tak mocno że ją boli"
+            content="rara stara została rara tak rara że ją rara"
             date="22.10.2021"
           />
         </div>
-        <div className="lotto container">JAKIES KURWA LOTTO</div>
+        <div className="lotto container">TU BĘDZIE LOTTO</div>
       </div>
     </Wrapper>
   );

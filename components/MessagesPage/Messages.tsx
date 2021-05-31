@@ -27,12 +27,12 @@ export const MessagesPage = () => {
         </Button>
       </div>
       <div className="messages">
-        <Bar title="dupa" content="dupy dwie" date="10.01.10" />
-        <Bar title="dupa" content="dupy dwie" date="10.01.10" />
-        <Bar title="dupa" content="dupy dwie" date="10.01.10" />
-        <Bar title="dupa" content="dupy dwie" date="10.01.10" />
-        <Bar title="dupa" content="dupy dwie" date="10.01.10" />
-        <Bar title="dupa" content="dupy dwie" date="10.01.10" />
+        <Bar title="test" content="test dwie" date="10.01.10" />
+        <Bar title="test" content="test dwie" date="10.01.10" />
+        <Bar title="test" content="test dwie" date="10.01.10" />
+        <Bar title="test" content="test dwie" date="10.01.10" />
+        <Bar title="test" content="test dwie" date="10.01.10" />
+        <Bar title="test" content="test dwie" date="10.01.10" />
       </div>
     </Wrapper>
   );
