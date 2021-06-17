@@ -57,13 +57,11 @@ export const Header = () => {
             <div className="menuItem">{title}</div>
           </NextLink>
         ))}
-        {currentUser ? (
-          <div className="menuItem">Wyloguj</div>
-        ) : (
+       
           <NextLink href="/login">
             <div className="menuItem">Login</div>
           </NextLink>
-        )}
+        
       </div>
     </Wrapper>
   );
