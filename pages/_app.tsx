@@ -2,15 +2,17 @@ import React from 'react';
 import type { AppProps } from 'next/app';
 import { GlobalStyle } from '../styles/globalStyles';
 import { Header } from '../components/Header';
-import { Footer } from '../components/Footer'
+import { Footer } from '../components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />
-      <Header/>
+
+        <Header />
         <Component {...pageProps} />
-      <Footer/>
+        <Footer />
+
     </>
   );
 }

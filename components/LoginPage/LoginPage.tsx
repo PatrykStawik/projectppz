@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { useLoginContext } from '../../context/login';
+import { login } from '../../services/auth.service';
 import { Input } from '../common/Input';
 import { Button } from '../common/Button';
 import { NextLink } from '../common/NextLink';
@@ -28,11 +31,39 @@ const Wrapper = styled.div`
 `;
 
 export const LoginPage = () => {
+  const router = useRouter();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const onChangeUsername = (e: { target: { value: any; }; }) => {
+    const username = e.target.value;
+    setUsername(username);
+  };
+
+  const onChangePassword = (e: { target: { value: any; }; }) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+  const handleLogin = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    login(username, password).then(
+      () => {
+        router.push('/');
+        // window.location.reload();
+      },
+      error => {
+        const resMessage =
+          (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+        setMessage(resMessage);
+      },
+    );
+  };
   return (
     <Wrapper>
       <div className="inputs">
-        <Input placeholder="login" />
-        <Input placeholder="hasło" type="password" />
+        <Input placeholder="login" value={username} onChange={onChangeUsername} />
+        <Input placeholder="hasło" type="password" value={password} onChange={onChangePassword} />
       </div>
       <div className="btns">
         <Button>
@@ -40,10 +71,11 @@ export const LoginPage = () => {
             <span>Nie masz konta?</span>
           </NextLink>
         </Button>
-        <Button>
+        <button onClick={handleLogin}>
           <span>Zaloguj</span>
-        </Button>
+        </button>
       </div>
+      {message && <div>Błędny login lub hasło</div>}
     </Wrapper>
   );
 };
