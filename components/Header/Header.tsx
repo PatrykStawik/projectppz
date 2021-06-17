@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { getCurrentUser, logout } from '../../services/auth.service';
+import { getCurrentUser } from '../../services/auth.service';
 import { colors } from '../../styles/colors';
 import { centerText, setFlex } from '../../styles/functions';
 import { NextLink } from '../common/NextLink';

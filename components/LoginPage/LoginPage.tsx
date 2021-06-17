@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { useLoginContext } from '../../context/login';
 import { login } from '../../services/auth.service';
 import { Input } from '../common/Input';
 import { Button } from '../common/Button';
